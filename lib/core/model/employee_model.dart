@@ -30,7 +30,7 @@ class EmployeeModel {
   String contactNumber;
   int age;
   String dob;
-  int salary;
+  double salary;
   String address;
 
   factory EmployeeModel.fromJson(Map<String, dynamic> json) => EmployeeModel(
