@@ -1,5 +1,6 @@
 import 'package:employee_app/core/model/employee_model.dart';
 import 'package:employee_app/ui/views/home/employee_details_view.dart';
+import 'package:employee_app/ui/widgets/employee_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -214,70 +215,7 @@ class _HomeViewState extends State<HomeView> {
 }
 
 
-class EmployeeList extends StatelessWidget {
-  final String imageLink, name;
-  final EmployeeModel model;
-  final VoidCallback onTap;
 
-  const EmployeeList({
-    Key? key,
-    required this.imageLink,
-    required this.name,
-    required this.model,
-    required this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 5.h),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            //check this one later
-            // CachedNetworkImage(
-            //   imageUrl: 'https://via.placeholder.com/300x300',
-            //   placeholder: (context, url) => const CircleAvatar(
-            //     backgroundColor: Colors.amber,
-            //     radius: 150,
-            //   ),
-            //   imageBuilder: (context, image) => CircleAvatar(
-            //     backgroundImage: image,
-            //     radius: 150,
-            //   ),
-            // ),
-            CircleAvatar(
-              radius: 32.r,
-              backgroundImage: NetworkImage(imageLink),
-            ),
-            SizedBox(
-              width: 15.w,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
-                ),
-                SizedBox(
-                  height: 3.h,
-                ),
-                Text(
-                  'Developer at Facebook',
-                  style: TextStyle(fontSize: 15.sp, color: Colors.grey),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class _AZItem extends ISuspensionBean {
   final EmployeeModel model;
