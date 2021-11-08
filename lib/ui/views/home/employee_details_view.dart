@@ -14,8 +14,9 @@ class EmployeeDetailsView extends StatelessWidget {
         leading: IconButton(
           onPressed: () => Get.back(),
             icon: const Icon(Icons.arrow_back,color: Colors.black,)),
-        actions: const [
-          Icon(Icons.more_vert,color: Colors.black,),
+        actions:  [
+          const Icon(Icons.more_vert,color: Colors.black,),
+          SizedBox(width: 10.w,),
         ],
         elevation: 0,
       ),
